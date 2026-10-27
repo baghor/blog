@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Ineza Irene Baghor, software engineer in Kigali. Building web products end to end with Laravel, Vue and Nuxt at RwBuild.',
+            'Ineza Irene Baghor, software engineer in Kigali and founder of Invaincu Ltd. Building fast, robust web products with Laravel, Vue and Nuxt.',
         },
         { name: 'theme-color', content: '#0b1220' },
       ],

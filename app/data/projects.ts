@@ -8,9 +8,10 @@ export interface Project {
   // One line for the card
   tagline: string
   company: string
-  years: string
+  // Shown with the company, e.g. "Invaincu Ltd · 2024 – Present"
+  years?: string
   role: string
-  stack: string[]
+  stack?: string[]
   summary: string
   highlights: string[]
   // Public address, when the product has one
@@ -18,6 +19,36 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'imvaho-nshya',
+    name: 'Imvaho Nshya',
+    tagline: 'Revamping the digital product of Imvaho Nshya, one of Rwanda’s best-known newspapers.',
+    company: 'Invaincu Ltd',
+    role: 'Founder & CEO',
+    summary:
+      'Invaincu Ltd won the opportunity to revamp the whole Imvaho Nshya product and signed a working contract with Rwanda Printing Company (RPC), the organisation that manages the newspaper.',
+    highlights: [
+      'Won the revamp of the full Imvaho Nshya product, under a working contract with Rwanda Printing Company (RPC).',
+      'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
+      'Focus on what Invaincu stands for: a fast, robust platform that readers and the newsroom can rely on.',
+    ],
+    url: 'https://imvahonshya.co.rw/',
+  },
+  {
+    slug: 'la-nouvelle-releve',
+    name: 'La Nouvelle Relève',
+    tagline: 'Revamping the digital product of La Nouvelle Relève, Rwanda’s French-language newspaper.',
+    company: 'Invaincu Ltd',
+    role: 'Founder & CEO',
+    summary:
+      'Alongside Imvaho Nshya, Invaincu Ltd is revamping the whole La Nouvelle Relève product, under the same working contract with Rwanda Printing Company (RPC).',
+    highlights: [
+      'Won the revamp of the full La Nouvelle Relève product, under a working contract with Rwanda Printing Company (RPC).',
+      'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
+      'Focus on a fast, robust platform that readers and the newsroom can rely on.',
+    ],
+    url: 'https://lanouvellereleve.co.rw/',
+  },
   {
     slug: '912rwanda',
     name: '912Rwanda',

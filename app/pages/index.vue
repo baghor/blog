@@ -3,7 +3,7 @@
     <!-- Intro -->
     <section class="hero">
       <div class="container">
-        <span class="eyebrow">Software Engineer · Kigali, Rwanda</span>
+        <span class="eyebrow">Software Engineer · Founder of Invaincu Ltd · Kigali</span>
 
         <h1 class="hero__title">
           Hi, I’m Ineza Irene Baghor.<br />
@@ -11,8 +11,8 @@
         </h1>
 
         <p class="hero__lead">
-          Software engineer at RwBuild, working across the stack with Laravel, Vue and Nuxt, from APIs and real-time
-          features to interfaces people rely on every day.
+          Software engineer at RwBuild and founder of Invaincu Ltd. I work across the stack with Laravel, Vue and Nuxt,
+          from APIs and real-time features to interfaces people rely on every day.
         </p>
 
         <div class="hero__actions">
@@ -37,9 +37,15 @@
             interfaces on top.
           </p>
           <p>
-            At RwBuild, a Kigali-based startup, I build software that has to work under pressure, like the dispatch
-            system behind Rwanda’s 912 emergency line and a job platform that takes people from application to hire.
-            I care about clear interfaces, reliable data and code the next engineer can pick up easily.
+            I joined RwBuild, a Kigali-based startup, in November 2019. There I build software that has to work under
+            pressure, like the dispatch system behind Rwanda’s 912 emergency line and a job platform that takes people
+            from application to hire. Leading the team through RwBuild’s yearly workshop trainings taught me how to
+            guide other engineers, not only write code.
+          </p>
+          <p>
+            That experience led me to found Invaincu Ltd in July 2024, a software company focused on fast, robust
+            software. Invaincu has since won the revamp of two of Rwanda’s best-known newspaper products, Imvaho Nshya
+            and La Nouvelle Relève, under a working contract with Rwanda Printing Company (RPC).
           </p>
         </div>
       </div>
@@ -60,6 +66,11 @@
             </ul>
           </article>
         </div>
+
+        <p class="flexible">
+          <strong>Flexible on stack.</strong> Laravel, Vue and Nuxt are my main tools, but I pick up what a project
+          needs, including Flutter for mobile apps.
+        </p>
       </div>
     </section>
 
@@ -68,7 +79,7 @@
       <div class="container">
         <span class="eyebrow">Selected work</span>
         <h2 class="section-title">Projects</h2>
-        <p class="section-lead">Products I have built at RwBuild. Open one to see what I worked on.</p>
+        <p class="section-lead">Products from Invaincu Ltd and RwBuild. Open one to see what I worked on.</p>
 
         <div class="projects">
           <ProjectCard v-for="project in projects" :key="project.slug" :project="project" />
@@ -85,13 +96,30 @@
         <div class="job">
           <div class="job__head">
             <div>
-              <h3 class="job__role">Software Engineer</h3>
-              <p class="job__company">RwBuild · Kigali, Rwanda</p>
+              <h3 class="job__role">Founder & CEO</h3>
+              <p class="job__company">Invaincu Ltd · Kigali, Rwanda</p>
             </div>
-            <span class="job__years">2022 – Present</span>
+            <span class="job__years">July 2024 – Present</span>
           </div>
 
           <ul class="job__list">
+            <li>Founded a software company focused on fast, robust software for organisations in Rwanda.</li>
+            <li>Won the revamp of the whole Imvaho Nshya and La Nouvelle Relève products, and signed a working contract with Rwanda Printing Company (RPC), which manages both newspapers.</li>
+            <li>Lead the projects from planning to delivery.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job__head">
+            <div>
+              <h3 class="job__role">Software Engineer</h3>
+              <p class="job__company">RwBuild · Kigali, Rwanda</p>
+            </div>
+            <span class="job__years">November 2019 – Present</span>
+          </div>
+
+          <ul class="job__list">
+            <li>Lead the team through the workshop trainings RwBuild runs every year.</li>
             <li>Build and maintain 912Rwanda, the emergency medical dispatch system: call intake, live maps, incidents, patient records, billing and reports.</li>
             <li>Rebuilt the Candidate job platform frontend in Nuxt 4 and TypeScript, with hiring stages, interview scheduling and real-time notifications.</li>
             <li>Work across Laravel APIs and Vue/Nuxt frontends, with real-time updates over Pusher and map features.</li>
@@ -201,6 +229,24 @@
     padding: 32px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
+  }
+
+  .job + .job {
+    margin-top: 20px;
+  }
+
+  .flexible {
+    max-width: 720px;
+    margin-top: 28px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 10px 10px 0;
+    color: var(--text-muted);
+  }
+
+  .flexible strong {
+    color: var(--text);
   }
 
   .job__head {

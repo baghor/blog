@@ -1,14 +1,14 @@
 <template>
   <NuxtLink :to="`/projects/${project.slug}`" class="card">
     <div class="card__top">
-      <span class="card__company">{{ project.company }} · {{ project.years }}</span>
+      <span class="card__company">{{ [project.company, project.years].filter(Boolean).join(' · ') }}</span>
       <span class="card__arrow" aria-hidden="true">→</span>
     </div>
 
     <h3 class="card__name">{{ project.name }}</h3>
     <p class="card__tagline">{{ project.tagline }}</p>
 
-    <ul class="tags">
+    <ul v-if="project.stack?.length" class="tags">
       <li v-for="item in project.stack.slice(0, 4)" :key="item" class="tag">{{ item }}</li>
     </ul>
   </NuxtLink>

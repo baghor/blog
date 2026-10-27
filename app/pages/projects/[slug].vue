@@ -3,7 +3,7 @@
     <div class="container">
       <NuxtLink to="/#work" class="project__back">← All projects</NuxtLink>
 
-      <span class="eyebrow">{{ project.company }} · {{ project.years }}</span>
+      <span class="eyebrow">{{ [project.company, project.years].filter(Boolean).join(' · ') }}</span>
       <h1 class="project__title">{{ project.name }}</h1>
       <p class="project__tagline">{{ project.tagline }}</p>
 
@@ -14,15 +14,15 @@
         </div>
         <div>
           <dt>Company</dt>
-          <dd>{{ project.company }}, a Kigali-based startup</dd>
+          <dd>{{ project.company }}</dd>
         </div>
-        <div>
+        <div v-if="project.years">
           <dt>Years</dt>
           <dd>{{ project.years }}</dd>
         </div>
       </dl>
 
-      <ul class="tags">
+      <ul v-if="project.stack?.length" class="tags">
         <li v-for="item in project.stack" :key="item" class="tag">{{ item }}</li>
       </ul>
 
