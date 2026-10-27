@@ -1,4 +1,4 @@
-/* Colours and type in one place; dark mode follows the system */
+/* Colours and type in one place; light by default, dark below */
 :root {
   --bg: #ffffff;
   --bg-soft: #f5f7fa;
@@ -9,6 +9,12 @@
   --accent: #0d9488;
   --accent-strong: #0f766e;
   --accent-soft: #e6f6f4;
+  --indigo: #6366f1;
+  --lift-shadow: 0 28px 56px -28px rgba(11, 18, 32, 0.28);
+
+  /* Springy ease that overshoots a little, for the bounce */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
@@ -19,19 +25,29 @@
   --gutter: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1220;
-    --bg-soft: #0f172a;
-    --surface: #111a2e;
-    --text: #e8edf5;
-    --text-muted: #9aa6b8;
-    --border: #1f2a40;
-    --accent: #2dd4bf;
-    --accent-strong: #5eead4;
-    --accent-soft: rgba(45, 212, 191, 0.12);
-    --shadow: none;
-  }
+/* Dark theme: set on <html> by the head script and the theme button */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b1220;
+  --bg-soft: #0f172a;
+  --surface: #111a2e;
+  --text: #e8edf5;
+  --text-muted: #9aa6b8;
+  --border: #1f2a40;
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --indigo: #818cf8;
+  --shadow: none;
+  --lift-shadow: 0 28px 56px -28px rgba(0, 0, 0, 0.8);
+}
+
+/* Theme switch: the new theme spreads in a circle (see useTheme) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 *,
@@ -42,7 +58,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -146,10 +162,8 @@ a {
   background: var(--accent-strong);
 }
 
-@media (prefers-color-scheme: dark) {
-  .btn--primary {
-    color: #04201c;
-  }
+:root[data-theme='dark'] .btn--primary {
+  color: #04201c;
 }
 
 .btn--ghost {
@@ -179,6 +193,145 @@ a {
   font-weight: 500;
 }
 
+/*
+ * Scroll reveal (v-reveal): hidden and a little low until it scrolls in, then
+ * it rises with a small bounce. Only when JS runs, so content never stays hidden.
+ */
+.js [data-reveal] {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 1s var(--spring) var(--reveal-delay, 0ms),
+    scale 1s var(--spring) var(--reveal-delay, 0ms),
+    filter 0.7s ease var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal]:not([data-in]) {
+  opacity: 0;
+  translate: 0 40px;
+  scale: 0.96;
+  filter: blur(6px);
+}
+
+/*
+ * Arriving at a section from the navbar: its heading bounces in and a line
+ * sweeps under the eyebrow.
+ */
+.arrive :is(.eyebrow, .section-title, .footer__title) {
+  animation: arrive 0.9s var(--spring) both;
+}
+
+.arrive :is(.section-title, .footer__title) {
+  animation-delay: 70ms;
+}
+
+.eyebrow {
+  position: relative;
+}
+
+.arrive .eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+  transform-origin: left;
+  animation: sweep 1.3s var(--ease-out) both;
+}
+
+@keyframes arrive {
+  0% {
+    transform: translateY(18px) scale(0.97);
+    opacity: 0.3;
+  }
+
+  55% {
+    transform: translateY(-5px) scale(1.015);
+    opacity: 1;
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: scaleX(0);
+  }
+
+  45% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+/*
+ * Cards with v-spotlight: a glow follows the mouse, the card tilts towards it
+ * and lifts on hover.
+ */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 0.45s var(--ease-out),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 13%, transparent), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.spotlight:hover {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: var(--lift-shadow);
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Tags hop up one after another when their card is hovered */
+.spotlight .tag {
+  transition:
+    transform 0.4s var(--spring),
+    background 0.3s ease;
+}
+
+.spotlight:hover .tag {
+  transform: translateY(-2px);
+}
+
+.spotlight:hover .tag:nth-child(2) {
+  transition-delay: 40ms;
+}
+
+.spotlight:hover .tag:nth-child(3) {
+  transition-delay: 80ms;
+}
+
+.spotlight:hover .tag:nth-child(4) {
+  transition-delay: 120ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -186,5 +339,18 @@ a {
 
   * {
     transition: none !important;
+    animation: none !important;
+  }
+
+  .js [data-reveal]:not([data-in]) {
+    opacity: 1;
+    translate: none;
+    scale: none;
+    filter: none;
+  }
+
+  .spotlight,
+  .spotlight:hover {
+    transform: none;
   }
 }

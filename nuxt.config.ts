@@ -17,7 +17,18 @@ export default defineNuxtConfig({
           content:
             'Ineza Irene Baghor, software engineer in Kigali and founder of Invaincu Ltd. Building fast, robust web products with Laravel, Vue and Nuxt.',
         },
-        { name: 'theme-color', content: '#0b1220' },
+        { name: 'theme-color', content: '#ffffff' },
+      ],
+      /*
+       * Runs before the first paint: picks the saved theme (else the system one)
+       * so dark mode never flashes white. `js` lets the scroll animations hide
+       * content until it is revealed; if the app never starts, it is removed.
+       */
+      script: [
+        {
+          innerHTML:
+            "(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;d.classList.add('js');setTimeout(function(){if(!window.__motion)d.classList.remove('js')},4000)})()",
+        },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

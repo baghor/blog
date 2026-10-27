@@ -3,11 +3,11 @@
     <div class="container">
       <NuxtLink to="/#work" class="project__back">← All projects</NuxtLink>
 
-      <span class="eyebrow">{{ [project.company, project.years].filter(Boolean).join(' · ') }}</span>
-      <h1 class="project__title">{{ project.name }}</h1>
-      <p class="project__tagline">{{ project.tagline }}</p>
+      <span v-reveal class="eyebrow">{{ [project.company, project.years].filter(Boolean).join(' · ') }}</span>
+      <h1 v-reveal="80" class="project__title">{{ project.name }}</h1>
+      <p v-reveal="160" class="project__tagline">{{ project.tagline }}</p>
 
-      <dl class="project__facts">
+      <dl v-reveal="240" class="project__facts">
         <div>
           <dt>Role</dt>
           <dd>{{ project.role }}</dd>
@@ -22,30 +22,32 @@
         </div>
       </dl>
 
-      <ul v-if="project.stack?.length" class="tags">
+      <ul v-if="project.stack?.length" v-reveal="300" class="tags">
         <li v-for="item in project.stack" :key="item" class="tag">{{ item }}</li>
       </ul>
 
-      <section class="project__section">
+      <section v-reveal class="project__section">
         <h2>Overview</h2>
         <p>{{ project.summary }}</p>
       </section>
 
-      <section class="project__section">
+      <section v-reveal class="project__section">
         <h2>What I worked on</h2>
         <ul class="project__list">
           <li v-for="item in project.highlights" :key="item">{{ item }}</li>
         </ul>
       </section>
 
-      <a v-if="project.url" :href="project.url" class="btn btn--primary" target="_blank" rel="noopener">
+      <a v-if="project.url" v-reveal :href="project.url" class="btn btn--primary" target="_blank" rel="noopener">
         Visit {{ project.name }}
       </a>
 
       <nav v-if="others.length" class="project__more" aria-label="More projects">
         <span class="eyebrow">More work</span>
         <div class="project__others">
-          <ProjectCard v-for="other in others" :key="other.slug" :project="other" />
+          <div v-for="(other, index) in others" :key="other.slug" v-reveal="index * 90" class="project__other">
+            <ProjectCard :project="other" />
+          </div>
         </div>
       </nav>
     </div>
@@ -156,5 +158,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
+  }
+
+  .project__other {
+    display: flex;
   }
 </style>

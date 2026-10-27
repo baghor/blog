@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/projects/${project.slug}`" class="card">
+  <NuxtLink v-spotlight :to="`/projects/${project.slug}`" class="card spotlight">
     <div class="card__top">
       <span class="card__company">{{ [project.company, project.years].filter(Boolean).join(' · ') }}</span>
       <span class="card__arrow" aria-hidden="true">→</span>
@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+    width: 100%;
     height: 100%;
     padding: 28px;
     background: var(--surface);
@@ -32,14 +33,26 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     text-decoration: none;
-    transition:
-      border-color 0.2s,
-      transform 0.2s;
   }
 
-  .card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+  /* A gradient line sweeps across the top on hover */
+  .card::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--indigo));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  .card:hover::after,
+  .card:focus-visible::after {
+    transform: scaleX(1);
   }
 
   .card__top {
@@ -52,15 +65,20 @@
   .card__arrow {
     color: var(--accent);
     font-size: 18px;
-    transition: transform 0.2s;
+    transition: transform 0.4s var(--spring);
   }
 
   .card:hover .card__arrow {
-    transform: translateX(4px);
+    transform: translate(4px, -4px) rotate(-45deg);
   }
 
   .card__name {
     font-size: 24px;
+    transition: color 0.3s ease;
+  }
+
+  .card:hover .card__name {
+    color: var(--accent);
   }
 
   .card__tagline {

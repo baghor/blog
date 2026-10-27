@@ -2,12 +2,15 @@
   <footer id="contact" class="footer">
     <div class="container footer__inner">
       <div>
-        <span class="eyebrow">Contact</span>
-        <h2 class="footer__title">Let’s build something useful.</h2>
-        <p class="footer__text">Open to software engineering roles and collaborations. Email is the best way to reach me.</p>
+        <span v-reveal class="eyebrow">Contact</span>
+        <h2 v-reveal="80" class="footer__title">Have a product in mind? Let’s build it.</h2>
+        <p v-reveal="160" class="footer__text">
+          Open to software engineering roles, freelance projects and partnerships with Invaincu Ltd. Email is the
+          fastest way to reach me.
+        </p>
       </div>
 
-      <div class="footer__actions">
+      <div v-reveal="240" class="footer__actions">
         <a :href="`mailto:${email}`" class="btn btn--primary">{{ email }}</a>
         <a href="https://github.com/baghor" class="btn btn--ghost" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -15,7 +18,7 @@
 
     <div class="container footer__bottom">
       <span>© {{ year }} Ineza Irene Baghor</span>
-      <span>Kigali, Rwanda</span>
+      <span>Designed and built in Kigali, Rwanda</span>
     </div>
   </footer>
 </template>
