@@ -25,11 +25,13 @@ export const projects: Project[] = [
     tagline: 'Revamping the digital product of Imvaho Nshya, one of Rwanda’s best-known newspapers.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
+    stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
       'Invaincu Ltd won the opportunity to revamp the whole Imvaho Nshya product and signed a working contract with Rwanda Printing Company (RPC), the organisation that manages the newspaper.',
     highlights: [
       'Won the revamp of the full Imvaho Nshya product, under a working contract with Rwanda Printing Company (RPC).',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
+      'A Next.js and TypeScript frontend on a Laravel API.',
       'Focus on what Invaincu stands for: a fast, robust platform that readers and the newsroom can rely on.',
     ],
     url: 'https://imvahonshya.co.rw/',
@@ -40,11 +42,13 @@ export const projects: Project[] = [
     tagline: 'Revamping the digital product of La Nouvelle Relève, Rwanda’s French-language newspaper.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
+    stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
       'Alongside Imvaho Nshya, Invaincu Ltd is revamping the whole La Nouvelle Relève product, under the same working contract with Rwanda Printing Company (RPC).',
     highlights: [
       'Won the revamp of the full La Nouvelle Relève product, under a working contract with Rwanda Printing Company (RPC).',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
+      'A Next.js and TypeScript frontend on a Laravel API.',
       'Focus on a fast, robust platform that readers and the newsroom can rely on.',
     ],
     url: 'https://lanouvellereleve.co.rw/',

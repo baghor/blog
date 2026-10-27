@@ -68,8 +68,8 @@
         </div>
 
         <p class="flexible">
-          <strong>Flexible on stack.</strong> Laravel, Vue and Nuxt are my main tools, but I pick up what a project
-          needs, including Flutter for mobile apps.
+          <strong>Flexible on stack.</strong> Laravel, Vue and Nuxt are my main tools. I also build with React and
+          Next.js, and pick up what a project needs, including Flutter for mobile apps.
         </p>
       </div>
     </section>
