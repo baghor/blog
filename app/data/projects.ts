@@ -54,6 +54,25 @@ export const projects: Project[] = [
     url: 'https://lanouvellereleve.co.rw/',
   },
   {
+    slug: 'beautyhub',
+    name: 'BeautyHub',
+    tagline: 'A salon marketplace and management platform on the web and Android, with iOS coming soon.',
+    company: 'Invaincu Ltd',
+    role: 'Founder & CEO',
+    stack: ['Next.js', 'React', 'Laravel', 'Flutter'],
+    summary:
+      'BeautyHub connects clients with salons and gives salon owners one place to run their business. Clients find a salon, pick services and a stylist, and book a real open time without calling. Owners, from a solo stylist to a multi-branch chain, manage the whole business from it.',
+    highlights: [
+      'Flutter mobile app live on Android, with iOS submitted and awaiting App Store approval.',
+      'A Next.js and React web platform on a Laravel API.',
+      'Client booking: search by service or salon or near you, choose a stylist and book a real open time.',
+      'Salon management: online bookings, client profiles, staff scheduling, inventory, loyalty and marketing campaigns, across multiple branches.',
+      'Payments and finance: invoices, deposits, mobile money proofs, payroll and commissions, and KRA eTIMS support for Kenyan salons.',
+      'Simple pricing based only on the number of active staff, with every feature in every plan.',
+    ],
+    url: 'https://beautyhub.style/',
+  },
+  {
     slug: '912rwanda',
     name: '912Rwanda',
     tagline: 'Emergency medical dispatch for Rwanda’s 912 ambulance service.',

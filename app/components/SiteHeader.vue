@@ -330,7 +330,6 @@
 
   /*
    * Logo: IB on a calm deep teal, the site's accent toned down, with a sage dot.
-   * To go back to the black one: --logo-bg: var(--text); --logo-ink: var(--bg); --logo-dot: var(--accent).
    */
   .logo {
     --logo-bg: #1f4e4a;
@@ -385,6 +384,7 @@
   }
 
   .logo__name {
+    white-space: nowrap;
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 600;
@@ -541,6 +541,7 @@
 
   /* Call to action */
   .cta {
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -801,8 +802,8 @@
     }
   }
 
-  /* Phone */
-  @media (max-width: 760px) {
+  /* Phone and small tablet: the full nav no longer fits on one line */
+  @media (max-width: 860px) {
     .nav,
     .cta {
       display: none;

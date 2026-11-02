@@ -28,14 +28,34 @@
           <NuxtLink to="/#contact" class="btn btn--ghost" @click.prevent="goTo('contact')">Get in touch</NuxtLink>
         </div>
 
-        <dl class="stats">
-          <div v-for="(stat, index) in stats" :key="stat.label" v-reveal="320 + index * 90" class="stat">
-            <dt class="stat__label">{{ stat.label }}</dt>
-            <dd class="stat__value">
-              <span :data-count="stat.value">{{ stat.value }}</span>{{ stat.suffix }}
-            </dd>
-          </div>
-        </dl>
+        <ul class="stats">
+          <li v-for="(stat, index) in stats" :key="stat.label" v-reveal="320 + index * 90" class="stats__item">
+            <div v-spotlight class="stat spotlight">
+              <span class="stat__icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path :d="stat.icon" />
+                </svg>
+              </span>
+
+              <div class="stat__text">
+                <span class="stat__value">
+                  <span :data-count="stat.value">{{ stat.value }}</span>
+                  <span class="stat__suffix">{{ stat.suffix }}</span>
+                </span>
+                <span class="stat__label">{{ stat.label }}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -63,7 +83,8 @@
           <p v-reveal="180">
             In July 2024 I founded Invaincu Ltd, a software company built on one promise: fast, robust software. Under
             a working contract with Rwanda Printing Company (RPC), Invaincu is revamping the complete digital products
-            of two national newspapers, Imvaho Nshya and La Nouvelle Relève.
+            of two national newspapers, Imvaho Nshya and La Nouvelle Relève. Invaincu is also behind BeautyHub, a salon
+            booking and management platform with an Android app, and iOS coming soon.
           </p>
         </div>
       </div>
@@ -155,9 +176,24 @@
   const monthsAtRwBuild = (now.getFullYear() - 2019) * 12 + now.getMonth() - 10
 
   const stats = [
-    { value: now.getFullYear() - 2017, suffix: '+', label: 'Years building for the web' },
-    { value: Math.floor(monthsAtRwBuild / 12), suffix: '+', label: 'Years engineering at RwBuild' },
-    { value: 2, suffix: '', label: 'National newspapers being rebuilt' },
+    {
+      value: now.getFullYear() - 2017,
+      suffix: '+',
+      label: 'Years building for the web',
+      icon: 'M8 6l-6 6 6 6M16 6l6 6-6 6',
+    },
+    {
+      value: Math.floor(monthsAtRwBuild / 12),
+      suffix: '+',
+      label: 'Years engineering at RwBuild',
+      icon: 'M3 8h18v12H3zM8 8V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 13h18',
+    },
+    {
+      value: 2,
+      suffix: '',
+      label: 'National newspapers being rebuilt',
+      icon: 'M4 5h13v15H6a2 2 0 0 1-2-2zM17 9h3v9a2 2 0 0 1-2 2h-1M8 9h5M8 13h5M8 16h5',
+    },
   ]
 
   const skills = [
@@ -195,6 +231,7 @@
       points: [
         'Founded and lead a software company delivering fast, robust products for organisations in Rwanda.',
         'Secured a working contract with Rwanda Printing Company (RPC) to revamp the complete digital products of Imvaho Nshya and La Nouvelle Relève.',
+        'Delivered BeautyHub, a salon booking and management platform on the web and Android, with iOS coming soon.',
         'Own delivery end to end, from scoping and architecture (Next.js, TypeScript and a Laravel API) to launch.',
       ],
     },
@@ -304,32 +341,66 @@
   .stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    max-width: 720px;
+    gap: 18px;
+    max-width: 880px;
     margin: 64px 0 0;
-    padding-top: 28px;
-    border-top: 1px solid var(--border);
+    padding: 0;
+    list-style: none;
+  }
+
+  .stats__item {
+    display: flex;
   }
 
   .stat {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    gap: 6px;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .stat__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+  }
+
+  .stat__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .stat__value {
-    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
     font-family: var(--font-heading);
-    font-size: clamp(30px, 4vw, 40px);
+    font-size: clamp(32px, 4vw, 42px);
     font-weight: 700;
     line-height: 1;
     font-variant-numeric: tabular-nums;
   }
 
+  .stat__suffix {
+    color: var(--accent);
+  }
+
   .stat__label {
     color: var(--text-muted);
     font-size: 14px;
+    line-height: 1.45;
   }
 
   .about {
@@ -565,18 +636,23 @@
   @media (max-width: 560px) {
     .stats {
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 14px;
+      margin-top: 48px;
     }
 
     .stat {
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      align-items: baseline;
-      gap: 12px;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .stat__text {
+      gap: 4px;
     }
 
     .stat__value {
-      min-width: 56px;
+      font-size: 28px;
     }
 
     .hero__orb--teal {
