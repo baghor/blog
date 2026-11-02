@@ -17,5 +17,9 @@ and gets its own page at `/projects/<slug>`.
 
 ## Deploy
 
-Pushing to `master` runs `.github/workflows/deploy.yml`, which generates the site and
-publishes it to the `gh-pages` branch. `public/CNAME` holds the custom domain.
+The site is live at https://baghor.github.io/Irene-Portfolio/, served by GitHub Pages from the
+`test` branch of [baghor/Irene-Portfolio](https://github.com/baghor/Irene-Portfolio).
+
+To publish, run `npm run generate` and commit the contents of `.output/public` to that branch.
+`baseURL` in `nuxt.config.ts` must match the address, and `public/.nojekyll` must stay, or GitHub
+drops the `_nuxt` folder.

@@ -1,4 +1,7 @@
 // Static site: `npm run generate` writes it to .output/public for GitHub Pages
+// Published on GitHub Pages at baghor.github.io/Irene-Portfolio/
+const baseURL = '/Irene-Portfolio/'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
@@ -7,6 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
+    baseURL,
     head: {
       htmlAttrs: { lang: 'en' },
       titleTemplate: '%s · Ineza Irene Baghor',
@@ -31,7 +35,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}favicon.svg` },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
