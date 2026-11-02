@@ -2,9 +2,15 @@
  * Projects shown on the home page and on /projects/<slug>.
  * To add one, copy an entry: it shows up in the list and gets its own page.
  */
+import beautyhubImage from '~/assets/images/beautyhub.webp'
+import imvahoImage from '~/assets/images/imvaho-nshya.webp'
+import releveImage from '~/assets/images/la-nouvelle-releve.webp'
+
 export interface Project {
   slug: string
   name: string
+  // Picture for the card, when the product is public
+  image?: string
   // One line for the card
   tagline: string
   company: string
@@ -22,6 +28,7 @@ export const projects: Project[] = [
   {
     slug: 'imvaho-nshya',
     name: 'Imvaho Nshya',
+    image: imvahoImage,
     tagline: 'The revamped digital product of Imvaho Nshya, one of Rwanda’s best-known newspapers, now live.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
@@ -39,6 +46,7 @@ export const projects: Project[] = [
   {
     slug: 'la-nouvelle-releve',
     name: 'La Nouvelle Relève',
+    image: releveImage,
     tagline: 'The revamped digital product of La Nouvelle Relève, Rwanda’s French-language newspaper, launching soon.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
@@ -56,6 +64,7 @@ export const projects: Project[] = [
   {
     slug: 'beautyhub',
     name: 'BeautyHub',
+    image: beautyhubImage,
     tagline: 'A salon marketplace and management platform on the web and Android, with iOS coming soon.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',

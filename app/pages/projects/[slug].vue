@@ -71,6 +71,8 @@
 
   useSeoMeta({
     description: () => project.value?.tagline ?? '',
+    ogTitle: () => `${project.value?.name} · Ineza Irene Baghor`,
+    ogDescription: () => project.value?.tagline ?? '',
   })
 </script>
 
