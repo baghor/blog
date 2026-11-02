@@ -34,9 +34,9 @@ export const projects: Project[] = [
     role: 'Founder & CEO',
     stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
-      'Invaincu Ltd won the opportunity to revamp the whole Imvaho Nshya product and signed a working contract with Rwanda Printing Company (RPC), the organisation that manages the newspaper. The new product is now live.',
+      'As a long-term partner of RPC Ltd, the organisation that manages the newspaper, Invaincu Ltd rebuilt the whole Imvaho Nshya product. The new product is now live.',
     highlights: [
-      'Won the revamp of the full Imvaho Nshya product, under a working contract with Rwanda Printing Company (RPC).',
+      'Rebuilt the full Imvaho Nshya product as part of a long-term partnership with RPC Ltd.',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
       'A Next.js and TypeScript frontend on a Laravel API.',
       'Focus on what Invaincu stands for: a fast, robust platform that readers and the newsroom can rely on.',
@@ -52,9 +52,9 @@ export const projects: Project[] = [
     role: 'Founder & CEO',
     stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
-      'Alongside Imvaho Nshya, Invaincu Ltd rebuilt the whole La Nouvelle Relève product, under the same working contract with Rwanda Printing Company (RPC). The new version is launching soon.',
+      'Alongside Imvaho Nshya, Invaincu Ltd rebuilt the whole La Nouvelle Relève product, as part of the same long-term partnership with RPC Ltd. The new version is launching soon.',
     highlights: [
-      'Won the revamp of the full La Nouvelle Relève product, under a working contract with Rwanda Printing Company (RPC).',
+      'Rebuilt the full La Nouvelle Relève product as part of a long-term partnership with RPC Ltd.',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
       'A Next.js and TypeScript frontend on a Laravel API.',
       'Focus on a fast, robust platform that readers and the newsroom can rely on.',

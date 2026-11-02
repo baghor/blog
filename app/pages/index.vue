@@ -81,8 +81,8 @@
             much as theirs.
           </p>
           <p v-reveal="180">
-            In July 2024 I founded Invaincu Ltd, a software company built on one promise: fast, robust software. Under
-            a working contract with Rwanda Printing Company (RPC), Invaincu rebuilt the complete digital products of two
+            In July 2024 I founded Invaincu Ltd, a software company built on one promise: fast, robust software. Through
+            a long-term partnership with RPC Ltd, Invaincu rebuilt the complete digital products of two
             national newspapers: Imvaho Nshya is live, and the new La Nouvelle Relève is launching soon. Invaincu is
             also behind BeautyHub, a salon booking and management platform with an Android app, and iOS coming soon.
           </p>
@@ -230,7 +230,7 @@
       years: 'July 2024 – Present',
       points: [
         'Founded and lead a software company delivering fast, robust products for organisations in Rwanda.',
-        'Secured a working contract with Rwanda Printing Company (RPC) to revamp the complete digital products of Imvaho Nshya and La Nouvelle Relève.',
+        'Built a long-term partnership with RPC Ltd, rebuilding the complete digital products of Imvaho Nshya and La Nouvelle Relève.',
         'Delivered BeautyHub, a salon booking and management platform on the web and Android, with iOS coming soon.',
         'Own delivery end to end, from scoping and architecture (Next.js, TypeScript and a Laravel API) to launch.',
       ],
