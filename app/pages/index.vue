@@ -82,9 +82,9 @@
           </p>
           <p v-reveal="180">
             In July 2024 I founded Invaincu Ltd, a software company built on one promise: fast, robust software. Under
-            a working contract with Rwanda Printing Company (RPC), Invaincu is revamping the complete digital products
-            of two national newspapers, Imvaho Nshya and La Nouvelle Relève. Invaincu is also behind BeautyHub, a salon
-            booking and management platform with an Android app, and iOS coming soon.
+            a working contract with Rwanda Printing Company (RPC), Invaincu rebuilt the complete digital products of two
+            national newspapers: Imvaho Nshya is live, and the new La Nouvelle Relève is launching soon. Invaincu is
+            also behind BeautyHub, a salon booking and management platform with an Android app, and iOS coming soon.
           </p>
         </div>
       </div>
@@ -191,7 +191,7 @@
     {
       value: 2,
       suffix: '',
-      label: 'National newspapers being rebuilt',
+      label: 'National newspapers rebuilt',
       icon: 'M4 5h13v15H6a2 2 0 0 1-2-2zM17 9h3v9a2 2 0 0 1-2 2h-1M8 9h5M8 13h5M8 16h5',
     },
   ]

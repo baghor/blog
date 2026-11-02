@@ -22,12 +22,12 @@ export const projects: Project[] = [
   {
     slug: 'imvaho-nshya',
     name: 'Imvaho Nshya',
-    tagline: 'Revamping the digital product of Imvaho Nshya, one of Rwanda’s best-known newspapers.',
+    tagline: 'The revamped digital product of Imvaho Nshya, one of Rwanda’s best-known newspapers, now live.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
     stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
-      'Invaincu Ltd won the opportunity to revamp the whole Imvaho Nshya product and signed a working contract with Rwanda Printing Company (RPC), the organisation that manages the newspaper.',
+      'Invaincu Ltd won the opportunity to revamp the whole Imvaho Nshya product and signed a working contract with Rwanda Printing Company (RPC), the organisation that manages the newspaper. The new product is now live.',
     highlights: [
       'Won the revamp of the full Imvaho Nshya product, under a working contract with Rwanda Printing Company (RPC).',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
@@ -39,12 +39,12 @@ export const projects: Project[] = [
   {
     slug: 'la-nouvelle-releve',
     name: 'La Nouvelle Relève',
-    tagline: 'Revamping the digital product of La Nouvelle Relève, Rwanda’s French-language newspaper.',
+    tagline: 'The revamped digital product of La Nouvelle Relève, Rwanda’s French-language newspaper, launching soon.',
     company: 'Invaincu Ltd',
     role: 'Founder & CEO',
     stack: ['Next.js', 'React', 'TypeScript', 'Laravel'],
     summary:
-      'Alongside Imvaho Nshya, Invaincu Ltd is revamping the whole La Nouvelle Relève product, under the same working contract with Rwanda Printing Company (RPC).',
+      'Alongside Imvaho Nshya, Invaincu Ltd rebuilt the whole La Nouvelle Relève product, under the same working contract with Rwanda Printing Company (RPC). The new version is launching soon.',
     highlights: [
       'Won the revamp of the full La Nouvelle Relève product, under a working contract with Rwanda Printing Company (RPC).',
       'Lead the project for Invaincu Ltd, from planning the new product to delivering it.',
