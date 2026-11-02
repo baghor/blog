@@ -307,8 +307,8 @@
     margin: 0 auto;
     padding: 0 8px 0 10px;
     background: linear-gradient(180deg, var(--glass-edge) -60%, var(--glass) 50%);
-    backdrop-filter: blur(18px) saturate(190%);
     -webkit-backdrop-filter: blur(18px) saturate(190%);
+    backdrop-filter: blur(18px) saturate(190%);
     border-radius: 999px;
     box-shadow:
       inset 0 1px 0 var(--glass-edge),
@@ -827,8 +827,8 @@
     .header--open .header__bar {
       background: transparent;
       box-shadow: none;
-      backdrop-filter: none;
       -webkit-backdrop-filter: none;
+      backdrop-filter: none;
     }
 
     .logo__role {
