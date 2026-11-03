@@ -164,6 +164,9 @@
         </ol>
       </div>
     </section>
+
+    <!-- Motto -->
+    <SiteMotto />
   </div>
 </template>
 

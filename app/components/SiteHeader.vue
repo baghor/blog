@@ -95,9 +95,7 @@
           <NuxtLink to="/#contact" class="btn btn--primary menu__cta" @click.prevent="goTo('contact')">Let’s talk</NuxtLink>
 
           <div class="menu__contacts">
-            <a :href="`mailto:${email}`">{{ email }}</a>
-            <a href="https://github.com/baghor" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
+            <a :href="`mailto:${email}`">{{ email }}</a>          </div>
         </div>
       </div>
     </Transition>
