@@ -3,10 +3,10 @@
     <div class="container footer__inner">
       <div>
         <span v-reveal class="eyebrow">Contact</span>
-        <h2 v-reveal="80" class="footer__title">Have a product in mind? Let’s build it.</h2>
+        <h2 v-reveal="80" class="footer__title">Have a product in mind? Let’s build it together.</h2>
         <p v-reveal="160" class="footer__text">
-          Open to software engineering roles, freelance projects and partnerships with Invaincu Ltd. Email is the
-          fastest way to reach me.
+          Open to software engineering roles, freelance engagements and partnerships with Invaincu Ltd. Email is the
+          quickest way to reach me.
         </p>
       </div>
 

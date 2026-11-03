@@ -12,12 +12,14 @@
 
         <h1 v-reveal="80" class="hero__title">
           Salut, I’m Ineza Irene Baghor.
-          <span class="hero__accent">I build fast, dependable software.</span>
+          <span class="hero__accent">I engineer fast, resilient software.</span>
         </h1>
 
         <p v-reveal="160" class="hero__lead">
-          Software engineer at RwBuild and founder of Invaincu Ltd. I design and ship complete products with Laravel,
-          Vue and Nuxt, from APIs and real-time systems to the interfaces people rely on every day.
+          From web platforms and mobile apps to the systems that power them, I build software designed to last. I
+          founded Invaincu Ltd, the team behind the digital platforms of two of Rwanda’s national newspapers, Imvaho
+          Nshya and La Nouvelle Relève, along with products like BeautyHub. Whatever we build, we hold it to one
+          standard: fast, robust and made for the people who use it. I’m also a software engineer at RwBuild.
         </p>
 
         <div v-reveal="240" class="hero__actions">
@@ -64,27 +66,28 @@
       <div class="container about">
         <div>
           <span v-reveal class="eyebrow">About</span>
-          <h2 v-reveal="80" class="section-title">Engineer, team lead and founder</h2>
+          <h2 v-reveal="80" class="section-title">Engineer, team lead and entrepreneur</h2>
         </div>
 
         <div class="about__body">
           <p v-reveal>
-            I have been building for the web since 2017. What began as frontend work grew into ownership of the whole
-            product: designing APIs, modelling data, wiring real-time features and shipping interfaces that stay fast
-            under real-world use.
+            My journey in software development began in 2017 on the frontend, crafting interfaces with HTML, CSS and
+            vanilla JavaScript and connecting them to APIs. Over the years, that foundation matured into full-stack
+            expertise: designing APIs, modelling data, building real-time features and delivering interfaces that
+            remain fast and reliable under real-world demand.
           </p>
           <p v-reveal="90">
-            I joined RwBuild, a Kigali-based startup, in November 2019 as a frontend developer. Over the years I grew
-            into a software engineer, working across the stack on systems that cannot afford to fail, among them the
-            dispatch platform behind Rwanda’s 912 emergency line. RwBuild’s yearly workshop trainings shaped much of
-            that growth: I lead the frontend team through them, and guiding others has sharpened my own engineering as
-            much as theirs.
+            I joined RwBuild, a Kigali-based startup, in November 2019 as a frontend developer and have since grown into
+            a software engineer working across the full stack on mission-critical systems, most notably the dispatch
+            platform behind Rwanda’s 912 emergency line. RwBuild’s annual workshop trainings have been central to that
+            growth: I lead the frontend team through them, and mentoring others has refined my own engineering practice
+            as much as theirs.
           </p>
           <p v-reveal="180">
-            In July 2024 I founded Invaincu Ltd, a software company built on one promise: fast, robust software. Through
-            a long-term partnership with RPC Ltd, Invaincu rebuilt the complete digital products of two
-            national newspapers: Imvaho Nshya is live, and the new La Nouvelle Relève is launching soon. Invaincu is
-            also behind BeautyHub, a salon booking and management platform with an Android app, and iOS coming soon.
+            In July 2024 I founded Invaincu Ltd, a software company built on a single commitment: fast, robust software.
+            Through a long-term partnership with RPC Ltd, Invaincu has rebuilt the complete digital products of two
+            national newspapers: Imvaho Nshya is now live, and the new La Nouvelle Relève launches soon. Invaincu also
+            developed BeautyHub, a salon booking and management platform available on Android, with iOS coming soon.
           </p>
         </div>
       </div>
@@ -94,7 +97,7 @@
     <section class="section">
       <div class="container">
         <span v-reveal class="eyebrow">What I do</span>
-        <h2 v-reveal="80" class="section-title">How I help teams ship</h2>
+        <h2 v-reveal="80" class="section-title">How I help teams deliver</h2>
 
         <div class="skills">
           <div v-for="(skill, index) in skills" :key="skill.title" v-reveal="index * 90" class="skills__item">
@@ -110,8 +113,8 @@
         </div>
 
         <p v-reveal class="flexible">
-          <strong>Beyond my core stack.</strong> Laravel, Vue and Nuxt are home, but I choose tools for the problem:
-          React and Next.js on the web, and Flutter when a product needs a mobile app.
+          <strong>Beyond my core stack.</strong> Laravel, Vue and Nuxt are my foundation, but I select tools to fit the
+          problem: React and Next.js on the web, and Flutter when a product calls for a mobile app.
         </p>
       </div>
     </section>
@@ -120,10 +123,10 @@
     <section id="work" class="section section--soft">
       <div class="container">
         <span v-reveal class="eyebrow">Selected work</span>
-        <h2 v-reveal="80" class="section-title">Products I’ve built</h2>
+        <h2 v-reveal="80" class="section-title">Products I’ve delivered</h2>
         <p v-reveal="160" class="section-lead">
-          A selection of products delivered through Invaincu Ltd and RwBuild. Open any project for the details of my
-          role.
+          A selection of products delivered through Invaincu Ltd and RwBuild. Open any project to explore my role and
+          contributions in detail.
         </p>
 
         <div class="projects">
@@ -138,7 +141,7 @@
     <section id="experience" class="section">
       <div class="container">
         <span v-reveal class="eyebrow">Experience</span>
-        <h2 v-reveal="80" class="section-title">Career so far</h2>
+        <h2 v-reveal="80" class="section-title">My professional journey</h2>
 
         <ol v-reveal class="timeline">
           <li v-for="(job, index) in jobs" :key="job.company" v-reveal="index * 120" class="timeline__item">
@@ -179,13 +182,13 @@
     {
       value: now.getFullYear() - 2017,
       suffix: '+',
-      label: 'Years building for the web',
+      label: 'Years of web development',
       icon: 'M8 6l-6 6 6 6M16 6l6 6-6 6',
     },
     {
       value: Math.floor(monthsAtRwBuild / 12),
       suffix: '+',
-      label: 'Years engineering at RwBuild',
+      label: 'Years of engineering at RwBuild',
       icon: 'M3 8h18v12H3zM8 8V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 13h18',
     },
     {
@@ -200,25 +203,25 @@
     {
       icon: '◆',
       title: 'Full-stack products',
-      text: 'End-to-end ownership: API design and data modelling on the server, a polished interface on top, and the integrations that tie them together.',
+      text: 'End-to-end product ownership: API design and data modelling on the server, a refined interface on the client, and the integrations that unite them into one coherent system.',
       tools: ['Laravel', 'PHP', 'MySQL', 'REST APIs'],
     },
     {
       icon: '◐',
       title: 'Frontend architecture',
-      text: 'Fast, accessible interfaces with considered loading, empty and error states, and forms that guide people to the finish.',
+      text: 'Fast, accessible interfaces built with deliberate attention to loading, empty and error states, and forms that guide users clearly to completion.',
       tools: ['VueJs 3', 'React JS', 'Nuxt', 'Next.js', 'TypeScript'],
     },
     {
       icon: '◎',
       title: 'Real-time systems & maps',
-      text: 'Live data that keeps every screen current, and mapping for locations, routes and units in motion, proven in emergency dispatch.',
+      text: 'Live data that keeps every screen in sync, and mapping for locations, routes and units in motion, proven in the demanding context of emergency dispatch.',
       tools: ['Pusher', 'Mapbox', 'Charts'],
     },
     {
       icon: '✦',
       title: 'Technical leadership',
-      text: 'Taking projects from scoping to launch, and leading the frontend team through RwBuild’s yearly workshop trainings.',
+      text: 'Guiding projects from scoping through to launch, and leading the frontend team through RwBuild’s annual workshop trainings.',
       tools: ['Planning', 'Code review', 'Training'],
     },
   ]
@@ -229,10 +232,10 @@
       company: 'Invaincu Ltd',
       years: 'July 2024 – Present',
       points: [
-        'Founded and lead a software company delivering fast, robust products for organisations in Rwanda.',
-        'Built a long-term partnership with RPC Ltd, rebuilding the complete digital products of Imvaho Nshya and La Nouvelle Relève.',
+        'Founded and lead a software company delivering fast, robust digital products for organisations across Rwanda.',
+        'Established a long-term partnership with RPC Ltd, rebuilding the complete digital products of Imvaho Nshya and La Nouvelle Relève.',
         'Delivered BeautyHub, a salon booking and management platform on the web and Android, with iOS coming soon.',
-        'Own delivery end to end, from scoping and architecture (Next.js, TypeScript and a Laravel API) to launch.',
+        'Oversee delivery end to end, from scoping and system architecture (Next.js, TypeScript and a Laravel API) through to launch.',
       ],
     },
     {
@@ -240,11 +243,11 @@
       company: 'RwBuild',
       years: 'November 2019 – Present',
       points: [
-        'Joined as a frontend developer and grew into a software engineer, taking on APIs, data and architecture alongside the interface.',
-        'Lead the frontend team through RwBuild’s yearly workshop trainings, which have shaped my own growth as an engineer too.',
-        'Build and maintain 912Rwanda, the emergency medical dispatch platform: call intake, live dispatch maps, incident tracking, patient records, billing and analytics.',
-        'Rebuilt the Candidate job platform frontend in Nuxt 4 and TypeScript, adding hiring pipelines, interview scheduling and real-time notifications.',
-        'Deliver across the stack: Laravel APIs, Vue and Nuxt frontends, real-time updates over Pusher and map-based features.',
+        'Joined as a frontend developer and progressed to software engineer, taking ownership of APIs, data and architecture alongside the interface.',
+        'Lead the frontend team through RwBuild’s annual workshop trainings, an experience that has also accelerated my own growth as an engineer.',
+        'Build and maintain 912Rwanda, the emergency medical dispatch platform, spanning call intake, live dispatch maps, incident tracking, patient records, billing and analytics.',
+        'Re-architected the Candidate job platform frontend in Nuxt 4 and TypeScript, introducing hiring pipelines, interview scheduling and real-time notifications.',
+        'Deliver across the full stack: Laravel APIs, Vue and Nuxt frontends, real-time updates via Pusher and map-based features.',
       ],
     },
   ]

@@ -4,7 +4,7 @@
 
     <main class="error container">
       <span class="eyebrow">{{ error?.statusCode ?? 'Error' }}</span>
-      <h1 class="error__title">{{ error?.statusCode === 404 ? 'This page doesn’t exist.' : 'Something went wrong.' }}</h1>
+      <h1 class="error__title">{{ error?.statusCode === 404 ? 'The page you’re looking for doesn’t exist.' : 'Something went wrong. Please try again.' }}</h1>
       <button class="btn btn--primary" @click="clearError({ redirect: '/' })">Back to home</button>
     </main>
 

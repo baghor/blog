@@ -32,7 +32,7 @@
       </section>
 
       <section v-reveal class="project__section">
-        <h2>What I worked on</h2>
+        <h2>My contributions</h2>
         <ul class="project__list">
           <li v-for="item in project.highlights" :key="item">{{ item }}</li>
         </ul>
@@ -43,7 +43,7 @@
       </a>
 
       <nav v-if="others.length" class="project__more" aria-label="More projects">
-        <span class="eyebrow">More work</span>
+        <span class="eyebrow">More projects</span>
         <div class="project__others">
           <div v-for="(other, index) in others" :key="other.slug" v-reveal="index * 90" class="project__other">
             <ProjectCard :project="other" />

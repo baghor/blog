@@ -4,7 +4,7 @@ const baseURL = '/Irene-Portfolio/'
 const siteUrl = `https://baghor.github.io${baseURL}`
 const shareTitle = 'Ineza Irene Baghor · Software Engineer'
 const shareDescription =
-  'Software engineer in Kigali and founder of Invaincu Ltd. Building fast, robust web products with Laravel, Vue and Nuxt.'
+  'Software engineer in Kigali and founder of Invaincu Ltd, engineering fast, robust web products with Laravel, Vue and Nuxt.'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Ineza Irene Baghor, software engineer in Kigali and founder of Invaincu Ltd. Building fast, robust web products with Laravel, Vue and Nuxt.',
+            'Ineza Irene Baghor, software engineer in Kigali and founder of Invaincu Ltd, engineering fast, robust web products with Laravel, Vue and Nuxt.',
         },
         { name: 'theme-color', content: '#ffffff' },
         { property: 'og:type', content: 'website' },
